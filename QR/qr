@@ -1,0 +1,41 @@
+import qrcode
+import io
+
+
+def generate_qr_code(info):
+    # Crear el contenido del código QR
+    qr_content = f"""
+INFORMACIÓN BANCARIA
+Nombre: {info['nombre']}
+RUT: {info['rut']}
+Banco: {info['banco']}
+Tipo de cuenta: {info['tipo_cuenta']}
+Número de cuenta: {info['numero_cuenta']}
+Correo: {info['correo']}
+    """.strip()
+
+    # Generar el código QR
+    qr = qrcode.QRCode(version=1, box_size=10, border=5)
+    qr.add_data(qr_content)
+    qr.make(fit=True)
+
+    # Crear una imagen del código QR
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    # Guardar la imagen
+    img.save("informacion_bancaria_qr.png")
+    print("Código QR generado y guardado como 'informacion_bancaria_qr.png'")
+
+
+# Información bancaria
+info_bancaria = {
+    "nombre": "Alianza Alfatres SA",
+    "rut": "76.103.973-3",
+    "banco": "Banco Estado",
+    "tipo_cuenta": "cuenta corriente",
+    "numero_cuenta": "53300501768",
+    "correo": "carrera@kamadi.cl"
+}
+
+# Generar el código QR
+generate_qr_code(info_bancaria)
