@@ -1,0 +1,6 @@
+numeros = [1, 2, 3]
+numerosos = list(range(1, 10))
+
+primero, segundo, tercero = numeros
+n1, *otros, n9 = numerosos
+print(n1, otros, n9)
