@@ -1,5 +1,5 @@
 # set significa grupo o conjunto
-primer = {1, 2, 2, 3, 4}
+primer = {1, 2, 3, 4}
 # primer.add(6)
 # primer.remove(1)
 # print(primer)
