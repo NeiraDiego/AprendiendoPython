@@ -3,7 +3,7 @@ print(numeros)
 
 punto = tuple([1, 2])
 print(punto)
-menosNumeros = numeros[:2]
+menosNumeros = numeros[:1]
 print(menosNumeros)
 primero, segundo, *otros = numeros
 print(primero, segundo, otros)
